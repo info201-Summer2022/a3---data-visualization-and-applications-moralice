@@ -1,0 +1,49 @@
+---
+title: "index.rmd"
+author: "Erin Morales"
+date: '2022-08-14'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+source("analysis.R")
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### **Introduction and Explanation of Summary Values**
+
+For this assignment, the focus was on _analyzing data from the trends in incarceration dataset_ across the United States. There were many columns in the dataset that corresponded to an important number relating to the amount of incarceration across decades, for certain racial groups, and in certain states. There is information about different racial groups and their population amount in relation to jails and prisons. In this report, I decided to focus on the total jail population and how the amount differs between different racial groups because I wanted to see what patterns emerge and how the data would be distributed. I went more in-depth with the jail population by analyzing the occurrence and amount of **Latinx jail population across the United States**. 
+
+The first variable I chose to analyze was the total jail population in the most recent year: 2018. I wanted to figure out which state had the highest total jail population and using my `“dplyr”` skills the answer revealed to be ```r jail_highest_state```. The second variable I chose to analyze was the row with the highest total jail population. This variable would reveal the year that had the highest total jail population to give a sense of the incarceration amount in the past years, revealing to be ```r year_highest_jail``` . The third variable I chose to analyze involved the question of which state contained the highest total Latinx jail population in 2018. I wanted to see the most recent data in relation to the Latinx jail population which revealed to be the highest in ```r high_state_latinx```. My fourth variable used `“dplyr”` skills to calculate the total Latinx jail population in California. The answer to this turned out to be ```r ca_latinx```. After the answer to the last question, I was curious as to how much the population incarcerated actually was. The last piece of summary information using `“dplyr”` skills analyzes the ratio between the Latinx population in Califonia and the Latinx jail population in California during the entirety of 2018, ```r latinx_ratio```. All these variables highlighted important parts of the original dataset that increased my overall knowledge about incarceration within the United States. All the variables I described are included in this introduction as well as listed below.
+
+``r jail_highest_state``
+
+``r year_highest_jail``
+
+``r high_state_latinx``
+
+``r ca_latinx``
+
+``r latinx_ratio``
+
+### **Trend over Time Chart:** _Line Chart_
+```{r, echo = FALSE, warning=FALSE, message=FALSE}
+line_chart
+```
+
+This trends over time chart analyzes the _total jail population for each racial_ group over the course of decades included in the incarceration trends dataset. I included this chart because I wanted to create a **visual representation** of the increasing amount of incarceration that has significantly increased from the late 1900’s. Some patterns that emerged included the collective increase of the jail population across all racial groups. The jail population showcases how the `“White”` and `“Black”` jail populations are higher than the rest of the racial groups. I used line graphs to visually highlight the inclines and declines to generate an overall idea of how the total jail population for each racial group could look like at any year.
+
+### **Variable Comparison Chart:** _Scatterplot_
+```{r, echo = FALSE, warning=FALSE, message=FALSE}
+scatter
+```
+
+The second chart that I created focuses on _the relationship between the Latinx jail population in the state of California_ overtime. I created this chart to see how the Latinx jail population relates and measures to each year specifically in the state of **California**, being as it is one of the locations with the highest Latinx jail population in a given year, especially 1993 according to my initial summary information list. From this chart it can be seen that as the years go by and come closer to the most recent year, there is an increase in jail population for Latinx people. These patterns are clearly shown with a scatter plot that has a color encoding to represent the amount of jail population each year contains in California specific to those who are Latinx. 
+
+### **Map:** _State Map_
+```{r, echo = FALSE, warning=FALSE, message=FALSE}
+map
+```
+
+In my United States chart, I included the entire map of the United States to **compare and contrast the total Latinx jail population** for each state in 2018. I wanted the entirety of a US map so I could visualize this one specific column across many locations. Through my initial variable research I found out that California accounted for the highest total Latinx jail population back in 1993, so I wanted to see _how each state would rank_ in the most recent year of the dataset. The map includes all the states and fills in gray the states where no Latinx jail population information is available. The map has a brick red color legend where the color brick red represents the total jail population to be over `10,000` and the lowest number of around `10` is represented with the color white. Through this chart I was able to notice that California and Texas account for the highest Latinx jail population by a long shot. The rest of the states are noticeably at a lower level than California and Texas around the `5,000` range. While California and Texas are clear outliers in being the locations where the Latinx jail population is at its highest and Alaska at its lowest, southern states tend to be higher in Latinx jail population than the mid-west and northern states, a clear example can be seen from Florida. 
