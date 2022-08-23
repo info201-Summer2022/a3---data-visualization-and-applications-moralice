@@ -1,5 +1,5 @@
 ---
-title: "index.rmd"
+title: "Latinx incarceration trends"
 author: "Erin Morales"
 date: '2022-08-14'
 output: html_document
@@ -15,17 +15,19 @@ knitr::opts_chunk$set(echo = TRUE)
 
 For this assignment, the focus was on _analyzing data from the trends in incarceration dataset_ across the United States. There were many columns in the dataset that corresponded to an important number relating to the amount of incarceration across decades, for certain racial groups, and in certain states. There is information about different racial groups and their population amount in relation to jails and prisons. In this report, I decided to focus on the total jail population and how the amount differs between different racial groups because I wanted to see what patterns emerge and how the data would be distributed. I went more in-depth with the jail population by analyzing the occurrence and amount of **Latinx jail population across the United States**. 
 
-The first variable I chose to analyze was the total jail population in the most recent year: 2018. I wanted to figure out which state had the highest total jail population and using my `“dplyr”` skills the answer revealed to be ```r jail_highest_state```. The second variable I chose to analyze was the row with the highest total jail population. This variable would reveal the year that had the highest total jail population to give a sense of the incarceration amount in the past years, revealing to be ```r year_highest_jail``` . The third variable I chose to analyze involved the question of which state contained the highest total Latinx jail population in 2018. I wanted to see the most recent data in relation to the Latinx jail population which revealed to be the highest in ```r high_state_latinx```. My fourth variable used `“dplyr”` skills to calculate the total Latinx jail population in California. The answer to this turned out to be ```r ca_latinx```. After the answer to the last question, I was curious as to how much the population incarcerated actually was. The last piece of summary information using `“dplyr”` skills analyzes the ratio between the Latinx population in Califonia and the Latinx jail population in California during the entirety of 2018, ```r latinx_ratio```. All these variables highlighted important parts of the original dataset that increased my overall knowledge about incarceration within the United States. All the variables I described are included in this introduction as well as listed below.
+The first variable I chose to analyze was the total jail population in the most recent year: 2018. I wanted to figure out which state had the highest total jail population and while conducting my data analysis skills the answer revealed to be ```r jail_highest_state```. The second variable I chose to analyze was the row with the highest total jail population. This variable would reveal the year that had the highest total jail population to give a sense of the incarceration amount in the past years, revealing to be ```r year_highest_jail``` . The third variable I chose to analyze involved the question of which state contained the highest total Latinx jail population in 2018. I wanted to see the most recent data in relation to the Latinx jail population which revealed to be the highest in ```r high_state_latinx```. My fourth variable was to calculate the total Latinx jail population in California. The answer to this turned out to be ```r ca_latinx```. After the answer to the last question, I was curious as to how much the population incarcerated actually was. The last piece of summary information analyzes the ratio between the Latinx population in Califonia and the Latinx jail population in California during the entirety of 2018, ```r latinx_ratio```. All these variables highlighted important parts of the original dataset that increased my overall knowledge about incarceration within the United States.
 
-``r jail_highest_state``
+All the variables I described are included in this introduction as well as listed below.
 
-``r year_highest_jail``
+1. which state had the highest total jail population? ``r jail_highest_state``
 
-``r high_state_latinx``
+2. which year had the highest total jail population? ``r year_highest_jail``
 
-``r ca_latinx``
+3. Which state had the highest total Latinx jail population in 2018? ``r high_state_latinx``
 
-``r latinx_ratio``
+4. What was the total Latinx jail population in California? ``r ca_latinx``
+
+5. What was the ratio of between the Latinx population in Califonia and the Latinx jail population in California during 2018? ``r latinx_ratio``
 
 ### **Trend over Time Chart:** _Line Chart_
 ```{r, echo = FALSE, warning=FALSE, message=FALSE}
